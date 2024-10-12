@@ -65,10 +65,8 @@ constructor(
 // TODO: The method should log the details of the Motorbike
 // TODO: The details should include the VIN, make, model, year, weight, top speed, color, and wheels
 override printDetails(): void {
-  // Call the printDetails method of the parent class, Vehicle
   super.printDetails();
 
-  // Log details of the Motorbike
   console.log(`VIN: ${this.vin}`);
   console.log(`Make: ${this.make}`);
   console.log(`Model: ${this.model}`);
@@ -77,13 +75,11 @@ override printDetails(): void {
   console.log(`Top Speed: ${this.topSpeed} mph`);
   console.log(`Color: ${this.color}`);
   
-  // Print details of the wheels
   this.wheels.forEach((wheel, index) => {
     console.log(`Wheel ${index + 1}: ${wheel.getDiameter} inch with a ${wheel.getTireBrand} tire`);
   });
 }
 }
-
 
 // Export the Motorbike class as the default export
 export default Motorbike;

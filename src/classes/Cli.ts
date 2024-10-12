@@ -4,6 +4,7 @@ import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
 import Wheel from "./Wheel.js";
+import Vehicle from "./Vehicle.js";
 
 // define the Cli class
 class Cli {
@@ -176,6 +177,7 @@ class Cli {
         },
       ])
       .then((answers) => {
+        const wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
         // TODO: Use the answers object to pass the required properties to the Truck constructor
         // TODO: push the truck to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the truck
@@ -188,6 +190,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
+          wheels,
           parseInt(answers.towingCapacity)
         );
         this.vehicles.push(truck);
@@ -301,9 +304,10 @@ class Cli {
         if (selectedVehicle === truck) {
           console.log("A truck cannot tow itself.");
           this.performActions(); 
-        } else {
+        } else if (selectedVehicle) {
           console.log(`Truck ${truck.make} ${truck.model} is towing vehicle: ${selectedVehicle.make} ${selectedVehicle.model}`);
           this.performActions();
+          
         }
       });
   }
@@ -395,8 +399,8 @@ class Cli {
         // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
 
-        else if (answers.action === 'Tow a vehicle' && vehicle instanceof Truck) { // Check if the vehicle is a truck before towing
-          this.findVehicleToTow(vehicle); // Call to findVehicleToTow method
+        else if (answers.action === 'Tow a vehicle' && Vehicle instanceof Truck) { // Check if the vehicle is a truck before towing
+          this.findVehicleToTow(Vehicle); // Call to findVehicleToTow method
           return;
         }
         else if (answers.action === 'Select or create another vehicle') {
