@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // Wheel class that defines the properties of a wheel
 class Wheel {
     // Constructor for the Wheel class
@@ -17,4 +15,4 @@ class Wheel {
     }
 }
 // Export the Wheel class
-exports.default = Wheel;
+export default Wheel;

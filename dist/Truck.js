@@ -1,13 +1,8 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 // import the Vehicle, Motorbike, Car, Wheel, and AbleToTow classes/interfaces
-const Vehicle_js_1 = __importDefault(require("./Vehicle.js"));
-const Wheel_js_1 = __importDefault(require("./Wheel.js"));
+import Vehicle from './Vehicle.js';
+import Wheel from './Wheel.js';
 // TODO: The Truck class should extend the Vehicle class and should implement the AbleToTow interface
-class Truck extends Vehicle_js_1.default {
+class Truck extends Vehicle {
     // TODO: Create a constructor that accepts the properties of the Truck class
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     // TODO: The constructor should initialize the properties of the Truck class
@@ -22,7 +17,7 @@ class Truck extends Vehicle_js_1.default {
         this.weight = weight;
         this.topSpeed = topSpeed;
         if (wheels.length !== 4) {
-            this.wheels = [new Wheel_js_1.default(), new Wheel_js_1.default(), new Wheel_js_1.default(), new Wheel_js_1.default()];
+            this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
         }
         else {
             this.wheels = wheels;
@@ -64,4 +59,4 @@ class Truck extends Vehicle_js_1.default {
     }
 }
 // Export the Truck class as the default export
-exports.default = Truck;
+export default Truck;

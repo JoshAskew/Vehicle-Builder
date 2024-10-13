@@ -1,13 +1,8 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 // Importing Vehicle and Wheel classes
-const Vehicle_js_1 = __importDefault(require("./Vehicle.js"));
-const Wheel_js_1 = __importDefault(require("./Wheel.js"));
+import Vehicle from './Vehicle.js';
+import Wheel from './Wheel.js';
 // Car class that extends Vehicle class
-class Car extends Vehicle_js_1.default {
+class Car extends Vehicle {
     // Constructor for the Car class
     constructor(vin, color, make, model, year, weight, topSpeed, wheels) {
         // Call the constructor of the parent class, Vehicle
@@ -24,7 +19,7 @@ class Car extends Vehicle_js_1.default {
         // If not, create 4 new Wheel objects
         // Otherwise, use the provided wheels array
         if (wheels.length !== 4) {
-            this.wheels = [new Wheel_js_1.default(), new Wheel_js_1.default(), new Wheel_js_1.default(), new Wheel_js_1.default()];
+            this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
         }
         else {
             this.wheels = wheels;
@@ -50,4 +45,4 @@ class Car extends Vehicle_js_1.default {
     }
 }
 // Export the Car class as the default export
-exports.default = Car;
+export default Car;

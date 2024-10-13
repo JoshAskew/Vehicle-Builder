@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // Vehicle class that implements Driveable interface
 class Vehicle {
     // Constructor for the Vehicle class
@@ -67,4 +65,4 @@ class Vehicle {
     }
 }
 // Export the Vehicle class
-exports.default = Vehicle;
+export default Vehicle;
