@@ -49,7 +49,7 @@ class Cli {
                 name: 'vehicleType',
                 message: 'Select a vehicle type',
                 // TODO: Update the choices array to include Truck and Motorbike
-                choices: ['Car', 'Truck', 'Motorbike'],
+                choices: ['Car', 'Truck', 'Motorbike'], // added Truck and Motorbike to the choices array.
             },
         ])
             .then((answers) => {
@@ -253,14 +253,15 @@ class Cli {
             // TODO: check if the selected vehicle is the truck
             // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
             // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
-            const selectedVehicle = this.vehicles.find(v => v.vin === answers.vehicleToTow);
-            if (selectedVehicle instanceof Truck) {
+            if (this.selectedVehicleVin == answers.vehicleToTow.vin) {
                 console.log("A truck cannot tow itself.");
                 this.performActions();
+                return;
             }
-            else if (selectedVehicle) {
-                console.log(`Truck ${truck.make} ${truck.model} is towing vehicle: ${selectedVehicle.make} ${selectedVehicle.model}`);
+            else {
+                truck.tow(answers.vehicleToTow);
                 this.performActions();
+                return;
             }
         });
     }
