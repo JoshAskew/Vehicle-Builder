@@ -33,8 +33,8 @@ This application is designed to either create or seclet a prebuilt vehicle from 
     ```bash
     npm start
 ## Usage
-This application is used by running the npm start command in the terminal, and then following the propts that follow. Watch thi video linked here to see it in action!
-[Watch the Video](https://drive.google.com/file/d/1RAzw-IyCSl3krEYR7WWUf6QSxhEC0W4m/view?usp=drive_link)
+This application is used by running the npm start command in the terminal, and then following the propts that follow. Watch the video linked here to see it in action! 
+✨[Watch the Video](https://drive.google.com/file/d/19dyXd6icqQi8VLXSVTm9SZ9lUpt5CDCf/view?usp=sharing)✨
 
 ## Contribution
 
